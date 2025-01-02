@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NHYSE1BIHpiJ/8JVQ/DIDpCThQjBrTzv9lERTeo/nkU=",
+  "Source": "SignalRChatServer",
+  "BasePath": "_content/SignalRChatServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
