@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using System.Globalization;
 
 namespace SignalRChatServer
 {
@@ -12,11 +13,14 @@ namespace SignalRChatServer
         }
         public void NewMessage(string userName,string text)
         {
+            var dateNow = DateTime.Now;
             Clients.All.SendAsync("newMessage",userName, text);
             Messages.Add(new Message()
             {
                 Text = text,
                 Username = userName,
+                SendDate = dateNow.ToString("dd/MM/yyyy"),
+                SendHours = dateNow.ToString("HH:mm")
             });
         }
 
@@ -32,5 +36,9 @@ namespace SignalRChatServer
         public string Username { get; set; }
 
         public string Text { get; set; }
+
+        public string SendDate { get; set; }
+
+        public string SendHours { get; set; }
     }
 }
